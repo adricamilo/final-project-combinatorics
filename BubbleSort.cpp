@@ -5,7 +5,7 @@ using namespace std;
 void bubbleSort(vector<int>& lista) {
     bool needNextPass = true;
 
-    for (int k = 1; k < lista.size() && needNextPass; k++) {
+    for (int k = 1; needNextPass && k < lista.size(); k++) {
         // Array may be sorted and next pass not needed
         needNextPass = false;
         for (int i = 0; i < lista.size() - k; i++) {
