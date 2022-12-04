@@ -14,7 +14,7 @@ void bubbleSort(vector<int>& lista) {
                 int temp = lista[i];
                 lista[i] = lista[i + 1];
                 lista[i + 1] = temp;
-                
+
                 needNextPass = true; // Next pass still needed
             }
         }
@@ -26,6 +26,6 @@ int main(){
 
     bubbleSort(helo);
     for (int i = 0; i < helo.size(); i ++){
-    cout << helo[i] << endl; 
+        cout << helo[i] << endl; 
     }
 }
