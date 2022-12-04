@@ -1,0 +1,20 @@
+#!/bin/bash
+SIZE=250
+MIN="-1000000"
+MAX="1000001"
+./reset_test
+echo "array_size,c++_time,java_time,python_time" > full_test_results.csv
+mkdir logs
+javac *.java
+g++ -o InsertionSort.out InsertionSort.cpp
+for i in {1..60}; do
+    echo Sorting array of $SIZE entries...
+    rm -f logs/*
+    printf "%d," $SIZE >> full_test_results.csv
+    java RandomArrayWriter $SIZE $MIN $MAX
+    let SIZE=SIZE+250
+    ./InsertionSort.out
+    java InsertionSort
+    python3 InsertionSort.py
+    echo $i/60 done.
+done

@@ -1,0 +1,9 @@
+#!/bin/bash
+rm -f -R data
+mkdir data
+for j in {1..10}; do
+    echo Running full test \#$j...
+	./full_test
+	filename="./data/full_test_results$j.csv"
+	cp full_test_results.csv $filename
+done
