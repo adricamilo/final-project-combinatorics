@@ -2,47 +2,35 @@
 #include <vector>
 using namespace std;
 
-void quickSort(vector<int>& lista) {
-    quickSort(lista, 0, lista.size() - 1)
-}
-
-void quickSort(vector<int>& lista, int first, int last) {
-    if (last >= first)
-        return;
-    int pivotIndex = partition(list, first, last);
-    quickSort(list, first, pivotIndex - 1);
-    quickSort(list, pivotIndex + 1, last);
-}
-
 int partition(vector<int>& lista, int first, int last) {
-    int pivot = list[first]; // Choose the new first element as the pivot
+    int pivot = lista[first]; // Choose the new first element as the pivot
     int low = first + 1; // Index for forward search
     int high = last; // Index for backward search
 
     while (high > low) {
         // Search forward from left
-        while (low <= high && list[low] <= pivot)
+        while (low <= high && lista[low] <= pivot)
             low++;
 
         // Search backward from right
-        while (low <= high && list[high] > pivot)
+        while (low <= high && lista[high] > pivot)
             high--;
 
         // Swap two elements in the list
         if (high > low) {
-            int temp = list[high];
-            list[high] = list[low];
-            list[low] = temp;
+            int temp = lista[high];
+            lista[high] = lista[low];
+            lista[low] = temp;
         }
     }
 
-    while (high > first && list[high] >= pivot)
+    while (high > first && lista[high] >= pivot)
         high--;
 
     // Swap pivot with list[high]
-    if (pivot > list[high]) {
-        list[first] = list[high];
-        list[high] = pivot;
+    if (pivot > lista[high]) {
+        lista[first] = lista[high];
+        lista[high] = pivot;
         return high;
     }
     else {
@@ -50,8 +38,21 @@ int partition(vector<int>& lista, int first, int last) {
     }
 }
 
+void quickSorting(vector<int>& lista, int first, int last) {
+    if (last <= first)
+        return;
+    int pivotIndex = partition(lista, first, last);
+    quickSorting(lista, first, pivotIndex - 1);
+    quickSorting(lista, pivotIndex + 1, last);
+}
+
+void quickSort(vector<int>& lista) {
+    quickSorting(lista, 0, lista.size() - 1);
+}
+
+
 int main(){
-    vector<int> helo = {1, 3, 2, 4, 5, 5, 8,9,10,522,45}
+    vector<int> helo = {1, 3, 2, 4, 5, 5, 8, 9, 10, 522, 45};
 
     quickSort(helo);
     for (int i = 0; i < helo.size(); i ++){
