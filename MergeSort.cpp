@@ -1,5 +1,5 @@
-#include <iostream>
-#include <vector>
+#include "sorting.hpp"
+
 using namespace std;
 
 void merge(vector<int>& list1, vector<int>& list2, vector<int>& temp) {
@@ -35,12 +35,3 @@ void mergeSort(vector<int>& lista) {
 
 }
 
-
-int main(){
-    vector<int> helo = {1, 3, 2, 4, 5, 5, 8, 9, 10, 522, 45};
-
-    mergeSort(helo);
-    for (int i = 0; i < helo.size(); i ++){
-        cout << helo[i] << endl; 
-    }
-}

@@ -1,5 +1,5 @@
-#include <iostream>
-#include <vector>
+#include "sorting.hpp"
+
 using namespace std;
 
 void bubbleSort(vector<int>& lista) {
@@ -18,14 +18,5 @@ void bubbleSort(vector<int>& lista) {
                 needNextPass = true; // Next pass still needed
             }
         }
-    }
-}
-
-int main(){
-    vector<int> helo = {1, 3, 2, 4, 5};
-
-    bubbleSort(helo);
-    for (int i = 0; i < helo.size(); i ++){
-        cout << helo[i] << endl; 
     }
 }

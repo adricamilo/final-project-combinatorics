@@ -1,5 +1,5 @@
-#include <iostream>
-#include <vector>
+#include "sorting.hpp"
+
 using namespace std;
 
 int partition(vector<int>& lista, int first, int last) {
@@ -50,12 +50,3 @@ void quickSort(vector<int>& lista) {
     quickSorting(lista, 0, lista.size() - 1);
 }
 
-
-int main(){
-    vector<int> helo = {1, 3, 2, 4, 5, 5, 8, 9, 10, 522, 45};
-
-    quickSort(helo);
-    for (int i = 0; i < helo.size(); i ++){
-        cout << helo[i] << endl; 
-    }
-}
