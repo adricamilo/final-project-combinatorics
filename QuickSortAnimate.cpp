@@ -22,8 +22,8 @@ int partition(vector<int>& lista, int first, int last, ofstream& writer) {
             int temp = lista[high];
             lista[high] = lista[low];
             lista[low] = temp;
-			
-			writeStatus(lista, writer);
+
+            writeStatus(lista, writer);
         }
     }
 
@@ -34,9 +34,9 @@ int partition(vector<int>& lista, int first, int last, ofstream& writer) {
     if (pivot > lista[high]) {
         lista[first] = lista[high];
         lista[high] = pivot;
-		
-		writeStatus(lista, writer);
-		
+
+        writeStatus(lista, writer);
+
         return high;
     }
     else {
@@ -53,11 +53,13 @@ void quickSorting(vector<int>& lista, int first, int last, ofstream& writer) {
 }
 
 void quickSortAnimate(vector<int>& lista, string archivo) {
-	ofstream writer;
-	writer.open("./" + archivo, ios_base::app);
-	
-	writeStatus(lista, writer);
-	
+    ofstream writer;
+    writer.open("./" + archivo, ios_base::app);
+
+    writeStatus(lista, writer);
+
     quickSorting(lista, 0, lista.size() - 1, writer);
+
+    writer.close();
 }
 
