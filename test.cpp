@@ -42,6 +42,8 @@ int main() {
         quickSort(v3);
         auto end3 = chrono::system_clock::now();
 
+<<<<<<< HEAD
+=======
         /*for (int k : data)
           cout << k << endl;
           cout << endl;
@@ -55,6 +57,7 @@ int main() {
           cout << k << endl;
           cout << endl;*/
 
+>>>>>>> eef49553d6b671f3b190d729d8760eb438aba4c5
         vector<long long> times;
 
         times.push_back((long long)chrono::duration_cast<chrono::milliseconds>(end1 - start1).count());

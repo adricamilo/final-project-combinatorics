@@ -1,6 +1,0 @@
-#!/bin/bash
-rm -f -r logs
-rm -f *.class
-rm -f *.out
-rm -f full_test_results.csv
-

@@ -32,4 +32,4 @@
 *.app
 
 # Test results
-results.txt
+*.txt
